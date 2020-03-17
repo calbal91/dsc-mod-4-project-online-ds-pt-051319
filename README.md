@@ -41,18 +41,18 @@ If we look at the data at a state by state level, we can see how property prices
 
 #### Prices as at April 2018
 
-![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth07.png)
+![PriceByState](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePrices.png)
 
 #### Price growth during financial crisis
 
-![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth12.png)
+![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth07.png)
 
 #### Price growth since financial crisis
 
-![MarketTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/PriceTrend.png)
+![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth12.png)
 
 
-One thing to note here is that whilst some states have grown very strongly in the last few years. However, many of these states were the ones worst hit by the crash - it may in simply be the case that they've been recovering their value, and don't offer good long-term potential.
+One thing to note here is that whilst some states have grown very strongly in the last few years, many of these states were the ones worst hit by the crash - it may in simply be the case that they've been recovering their value, and don't offer good long-term potential.
 
 ![StateGrowth](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StateGrowth.jpg)
 
@@ -64,7 +64,7 @@ This is all very important context for when we come to fit our forecasting model
 
 ## Selecting Regions
 
-We can get around this by discounting many of our zip codes out of hand straight away (given that we only need to choose 5).
+We can get around this by discounting many of our zip codes out of hand straight away (given that we only need to choose 5 anyway).
 
 We plot all the regions on a scatter, with recent price growth on the horizontal and price growth during the financial crisis on the vertical.
 
