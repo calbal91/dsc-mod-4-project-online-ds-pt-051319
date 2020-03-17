@@ -1,100 +1,98 @@
-
-# Module 4 -  Final Project Specifications
-
-## Introduction
-
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 4.
-
-## Objectives
-
-* Understand all required aspects of the Final Project for Module 4
-* Understand all required deliverables
-* Understand what constitutes a successful project
-
-### Final Project Summary
-
-Another module down--you're absolutely crushing it! For this project, you'll get to flex your **_Time-Series_** muscles!
-
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-4-project/master/images/timegif.gif'>
-
-For this module's final project, we're going to put your newfound **_Time Series Analysis_** skills to the test. You will be forecasting real estate prices of various zipcodes using data from [Zillow](https://www.zillow.com/research/data/). However, this won't be as straightforward as just running a time-series analysis--you're going to have to make some data-driven decisions and think critically along the way!
-
-### The Project
-
-For this project, you will be acting as a consultant for a fictional real-estate investment firm. The firm has asked you what seems like a simple question:
-
-> what are the top 5 best zipcodes for us to invest in?
-
-This may seem like a simple question at first glance, but there's more than a little ambiguity here that you'll have to think through in order to provide a solid recommendation. Should your recommendation be focused on profit margins only? What about risk? What sort of time horizon are you predicting against?  Your recommendation will need to detail your rationale and answer any sort of lingering questions like these in order to demonstrate how you define "best".
-
-As mentioned previously, the data you'll be working with comes from the [Zillow Research Page](https://www.zillow.com/research/data/). However, there are many options on that page, and making sure you have exactly what you need can be a bit confusing. For simplicity's sake, we have already provided the dataset for you in this repo--you will find it in the file `zillow_data.csv`.
-
-## The Deliverables
-
-The goal of this project is to have you complete a very common real-world task in regard to Time-Series Modeling. However, real world problems often come with a significant degree of ambiguity, which requires you to use your knowledge of statistics and data science to think critically about and answer. While the main task in this project is Time-Series Modeling, that isn't the overall goal--it is important to understand that Time-Series Modeling is a tool in your toolbox, and the forecasts it provides you are what you'll use to answer important questions.
-
-In short, to pass this project, demonstrating the quality and thoughtfulness of your overall recommendation is at least as important as successfully building a Time-Series model!
-
-Online students should complete the following 4 deliverables for this project:
-
-* A well-documented **_Jupyter Notebook_** containing any code you've written for this project (use the notebook in this repo, `mod_4_starter_notebook.ipynb`). This work will need to be pushed to your GitHub repository in order to submit your project.
-* An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-* A **_[Blog post](https://github.com/learn-co-curriculum/dsc-welcome-blogging)_**.
-* An **_'Executive Summary' PowerPoint Presentation_** that explains your rationale and methodology for determining the best zipcodes for investment.
-
-Note: On-campus students may have different deliverables, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, you will be provided with a jupyter notebook containing some starter code. If you inspect the zillow dataset file, you'll notice that the datetimes for each sale are the actual column names--this is a format you probably haven't seen before. To ensure that you're not blocked by preprocessing, we've provided some helper functions to help simplify getting the data into the correct format. You're not required to use this notebook or keep it in its current format, but we strongly recommend you consider making use of the helper functions so you can spend your time working on the parts of the project that matter.
-
-#### Organization/Code Cleanliness
-
-The notebook should be well organized, easy to follow, and code is modularized and commented where appropriate.
-
-* Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
-* Data visualizations you create should be clearly labeled and contextualized--that is, they fit with the surrounding code or problems you're trying to solve. No dropping data visualizations randomly around your notebook without any context!
-
-#### Findings
-
-Your notebook should briefly mention the metrics you have defined as "best", so that any readers understand what technical metrics you are trying to optimize for (for instance, risk vs profitability, ROI yield, etc.). You do **not** need to explain or defend your your choices in the notebook--the blog post and executive summary presentation are both better suited to that sort of content. However, the notebook should provide enough context about your definition for "best investment" so that they understand what the code you are writing is trying to solve.
-
-#### Visualizations
-
-Time-Series Analysis is an area of data science that lends itself well to intuitive data visualizations. Whereas we may not be able to visualize the best choice in a classification or clustering problem with a high-dimensional dataset, that isn't an issue with Time Series data. As such, **_any findings worth mentioning in this problem are probably also worth visualizing_**. Your notebook should make use of data visualizations as appropriate to make your findings obvious to any readers.
-
-Also, remember that if a visualization is worth creating, then it's also worth taking the extra few minutes to make sure that it is easily understandable and well-formatted. When creating visualizations, make sure that they have:
-
-* A title
-* Clearly labeled X and Y axes, with appropriate scale for each
-* A legend, when necessary
-* No overlapping text that makes it hard to read
-* An intelligent use of color--multiple lines should have different colors and/or symbols to make them easily differentiable to the eye
-* An appropriate amount of information--avoid creating graphs that are "too busy"--for instance, don't create a line graph with 25 different lines on it
-
-<center><img src='images/bad-graph-1.png' height=100% width=100%>
-There's just too much going on in this graph for it to be readable--don't make the same mistake! (<a href='http://genywealth.com/wp-content/uploads/2010/03/line-graph.php_.png'>Source</a>)</center>
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
+# Informing Business Strategy With Hypothesis Testing
 
 
-### Executive Summary Must-Haves
+## The Objective
 
-Your presentation should:
+Recommend 5 zip codes in the USA (out of a possible c.18,000) in which to invest in property, based in historical property pricing data.
 
-Contain between 5-10 professional quality slides detailing:
+## The Motivation
 
-* A high-level overview of your methodology and findings, including the 5 zipcodes you recommend investing in
-* A brief explanation of what metrics you defined as "best" in order complete this project
+Property has the potential to be an incredibly lucrative investment. Buying houses in the fastest growing areas in America between 1996-2018 could have given returns of up to 4,000% - massively outperforming pretty much any stock.
 
-As always, this prresentation should also:
+However, property investments have the potential to be financially ruinous. Just ask anyone who bought a house in Florida just before the financial crisis. If we're going to invest in property successfully, accurately forecasting house prices by area should allow us to better pick winners, and avoid bear traps.
 
-* Take no more than 5 minutes to present
-* Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
+## The Technologies Used
 
-## Grading Rubric 
+* Pandas for data munging
+* Statsmodels for ARIMA modeling
+* Matplotlib and Geopandas for data visualisation
 
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-4-project/blob/master/module4_project_rubric.pdf). _Note: On-campus students may have different requirements, please speak with your instructor._
+
+## The Process Overview
+
+1. As can often be the case in data science, we may not have expertise in the subject we're analysing. The first step should therefore be an exploration of the data.
+
+2. Having got to grips with our data, we should then create forecast models for the zip codes. Rather than doing this for every single area, we first narrow our zip codes down to those that seem low-risk, but with the potential to experience high growth.
+
+3. We then use our models to work out which five regions offer the greatest expected returns. We should also consider the confidence intervals for these forecasts, to further mitigate risk.
+
+
+## The Data
+
+Firstly, a high level view of the data shows how volatile the housing market has been in the last two decades (driven by the financial crisis around 2008-2012).
+
+![MarketTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/PriceTrend.png)
+
+This has significant implications for investors - we can see how different the fortunes of two investors could have been if they'd invested in, respectively, the best and worst zip codes in the 20 years from 1996.
+
+![Investments](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/BestWorstInvestment.jpg)
+
+If we look at the data at a state by state level, we can see how property prices have grown (and fallen) in different areas of the USA:
+
+#### Prices as at April 2018
+
+![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth07.png)
+
+#### Price growth during financial crisis
+
+![PriceTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StatePriceGrowth12.png)
+
+#### Price growth since financial crisis
+
+![MarketTrend](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/PriceTrend.png)
+
+
+One thing to note here is that whilst some states have grown very strongly in the last few years. However, many of these states were the ones worst hit by the crash - it may in simply be the case that they've been recovering their value, and don't offer good long-term potential.
+
+![StateGrowth](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/StateGrowth.jpg)
+
+This is all very important context for when we come to fit our forecasting models:
+
+* We should not use the full historical data to train our models. The financial crisis had a material effect on the shape of the time series, but was (we can only hope) a freak exogenous event. If we don’t expect something similar to happen again, then we shouldn’t let our model train itself on that data from that period. We should therefore focus on price data since April 2012…
+* However, taking this approach brings its own problems. By using only the last six years of data, a model might assume that regions in states like Nevada and Florida are sure bets, and enthusiastically recommend that we invest there. Of course, we know that growth in these cases was simply recovery from a rough recession. In any case, we should be wary of investing in regions that have the potential to shed half their value in the event of an unforeseen economic shock.
+
+
+## Selecting Regions
+
+We can get around this by discounting many of our zip codes out of hand straight away (given that we only need to choose 5).
+
+We plot all the regions on a scatter, with recent price growth on the horizontal and price growth during the financial crisis on the vertical.
+
+![ZipScatter](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/ZipScatter.png)
+
+By looking at regions that are above average in both measures, we can isolate places that both weathered the storm between 2007 and 2012 (demonstrating at least some resilience against economic shocks) and also strong growth potential for future years.
+
+Therefore, these 1,737 ‘Growth Regions’ are all areas that we can, in principle, feel comfortable recommending to investors. Indeed, by indexing April 2007 prices in these regions, we see that they have outperformed other regions since at least 1996.
+
+![GrowthRegions](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/GrowthRegionGrowth.png)
+
+
+## Modelling Forecasts
+
+Having checked that our data is neither stationary nor seasonal, we can go about producing individual ARIMA models for each zip code.
+
+#### Further detail on ARIMA modelling...
+
+![ARIMA](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/ARIMA.jpg)
+
+Having found an optimal ARIMA model for each zip code, we can see that some regions are forecast to experience very strong growth. However, some forecasts come with a very wide range – and would therefore make for risky investments.
+
+Again, we can focus on the best zip codes - those with strong growth potential, but also with narrow confidence intervals (and thus less intrinsic risk).
+
+![ZipRiskScatter](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/ZipScatter2.png)
+
+Finally, we can pick the five zip codes from these regions that have the highest forecast returns.
+
+![RecommendedRegions](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/Recommendations.jpg)
+
+![ExpectedReturns](https://github.com/calbal91/project-ARIMA-modelling/blob/master/Images/RecommendationReturns.jpg)
